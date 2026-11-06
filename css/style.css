@@ -1,0 +1,66 @@
+body {
+       font-family: Arial, sans-serif;
+   
+}
+h1 {
+     font-family: "Bondoni Moda", serif;
+     font-weight: 500;
+}
+header {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+nav {
+    align-content: center;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    gap: 20px;
+}
+
+li a {
+      flex-direction: row;
+    text-decoration: none;
+    color: black;
+}
+
+/* MENYKNAPP */
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+/* STÄNG MENY */
+.container {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Rotera bar1 */
+
+.change .bar1 {
+    transform: translate(0, 8px) rotate(-45deg);
+}
+
+/* Fade out bar2 */
+
+.change .bar2 {opacity: 0;}
+
+/* Rotera bar3 */
+.change .bar3 {
+    transform: translate(0, -8px) rotate(45deg);
+}
