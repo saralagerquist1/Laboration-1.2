@@ -1,43 +1,57 @@
 body {
-       font-family: Arial, sans-serif;
-   
-}
-h1 {
-     font-family: "Bondoni Moda", serif;
-     font-weight: 500;
-}
-header {
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
 }
 
+h1 {
+    font-family: "Bondoni Moda", serif;
+    font-weight: normal;
+    font-size: 2rem;
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.desktop-nav {
+    display: none;
+}
+
+/* Hamburgaremeny */
 nav {
     display: flex;
     align-items: center;
 }
+
 .container {
     cursor: pointer;
     position: relative;
     z-index: 11;
-    width: 35px;
+    padding-right: 20px;
+    width: 25px;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
     width: 30px;
     height: 3px;
+
     background-color: black;
+
     margin: 6px 0;
 }
 
 
-/* Bakgrund av overlay  */
+/* Overlay med öppen hamburgarmeny */
 .overlay {
     height: 100%;
     width: 0;
     position: fixed;
     z-index: 10;
-    left: 0;
+    right: 0;
     top: 0;
     background-color: rgb(255, 255, 255);
     overflow-x: hidden;
@@ -54,18 +68,53 @@ nav {
 
 /* Navigeringslänkarna innuti overlay */
 .overlay a {
-    padding: 8px;
+    font-size: 30px;
     text-decoration: none;
-    font-size: 36px;
-    color: #818181;
+    text-align: left;
+
     display: block;
+
+    color: #0b1315;
+
+    padding: 15px;
 
 }
 
 .overlay .closeBtn {
+    font-size: 60px;
+
     position: absolute;
     top: 20px;
     right: 45px;
-    font-size: 60px;
+
 }
 
+/* Större skärmar */
+@media screen and (min-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Döljer hamburgermenyn */
+    .menu {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .desktop-nav a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* Döljer overlay */
+    .overlay {
+        display: none;
+    }
+}
