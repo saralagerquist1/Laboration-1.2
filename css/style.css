@@ -1,18 +1,22 @@
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: #fcf9f7;
 }
 
 h1 {
-    font-family: "Bondoni Moda", serif;
-    font-weight: normal;
-    font-size: 2rem;
+    /* font-family: "Bondoni Moda", serif; */
+    font-family: "adobe-caslon-pro", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: #383535;
 
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px;
 }
 
 .desktop-nav {
@@ -29,17 +33,16 @@ nav {
     cursor: pointer;
     position: relative;
     z-index: 11;
-    padding-right: 20px;
     width: 25px;
 }
 
 .bar1,
 .bar2,
 .bar3 {
-    width: 30px;
-    height: 3px;
+    width: 27px;
+    height: 2px;
 
-    background-color: black;
+    background-color: #121212;
 
     margin: 6px 0;
 }
@@ -68,7 +71,7 @@ nav {
 
 /* Navigeringslänkarna innuti overlay */
 .overlay a {
-    font-size: 30px;
+    font-size: 1.5rem;
     text-decoration: none;
     text-align: left;
 
@@ -89,11 +92,27 @@ nav {
 
 }
 
+header img {
+    width: 150px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
 /* Större skärmar */
 @media screen and (min-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
+    }
+
+    header img {
+        width: 300px;
+        padding-bottom: 30px;
     }
 
     /* Döljer hamburgermenyn */
@@ -110,7 +129,7 @@ nav {
 
     .desktop-nav a {
         text-decoration: none;
-        color: black;
+        color: #121212;
     }
 
     /* Döljer overlay */
