@@ -1,29 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Montserrat", sans-serif;
-    background-color: #fcf9f7;
+    font-family: "bembo-mt-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f2efeb;
+    background-color: #fefdfd;
 }
 
 h1 {
-    /* font-family: "Bondoni Moda", serif; */
-    font-family: "adobe-caslon-pro", serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #383535;
-
+    font-size: 1.9rem;
 }
 
+h2,
+h3 {
+    font-family: "bembo-titling-mt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    color: #222222;
+}
+
+
+
+
+/* Logotyp */
 header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 10px 40px 10px 30px;
 }
 
+header img {
+    width: 200px;
+}
+
+/* Hamburgaremeny */
 .desktop-nav {
     display: none;
 }
 
-/* Hamburgaremeny */
 nav {
     display: flex;
     align-items: center;
@@ -40,11 +60,11 @@ nav {
 .bar2,
 .bar3 {
     width: 27px;
-    height: 2px;
+    height: 1.5px;
 
-    background-color: #121212;
+    background-color: #dbd3c6;
 
-    margin: 6px 0;
+    margin: 5px 0;
 }
 
 
@@ -71,6 +91,8 @@ nav {
 
 /* Navigeringslänkarna innuti overlay */
 .overlay a {
+    font-weight: 400;
+    font-style: normal;
     font-size: 1.5rem;
     text-decoration: none;
     text-align: left;
@@ -92,27 +114,156 @@ nav {
 
 }
 
-header img {
-    width: 150px;
+/* Hero */
+.hero {
+    position: relative;
+    background-color: #dbd3c6;
+    height: 500px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #f4f3f1;
+    overflow: hidden;
+}
+/* Headerbild med sänkt opacitet */
+/* Headerbild med sänkt opacitet */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../images/header.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.5;
 }
 
-main {
-    display: flex;
-    justify-content: center;
+.hero-content {
+    max-width: 700px;
     padding: 20px;
 }
+
+.hero h1 {
+    font-family: "bembo-titling-mt", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-style: normal;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid #f2efeb;
+    ;
+    color: #f2efeb;
+    ;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #f2efeb;
+    color: rgb(18, 33, 36);
+}
+
+/* Startsida uppgiftsbeskrivning */
+.section-intro {
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-intro h2 {
+    color: #222222;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.section-intro p {
+    color: #222222;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* Startsida – Bilder */
+.card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 90%;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    padding-bottom: 20px;
+}
+
+
+/* Bildredigering */
+.card-section-bildbeskrivning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card-section-bildbeskrivning .card {
+    width: 90%;
+}
+
+.card-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card-images img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-section-bildbeskrivning .card-content {
+    padding: 24px 0;
+    color: #222222;
+}
+
+
 
 
 /* Större skärmar */
 @media screen and (min-width: 768px) {
     header {
-        flex-direction: column;
         align-items: center;
-    }
-
-    header img {
-        width: 300px;
-        padding-bottom: 30px;
     }
 
     /* Döljer hamburgermenyn */
@@ -122,18 +273,54 @@ main {
 
     .desktop-nav {
         display: flex;
+        font-size: 0.9rem;
         flex-direction: row;
         align-items: center;
-        gap: 30px;
+        gap: 60px;
     }
 
     .desktop-nav a {
+        font-family: "bembo-titling-mt", sans-serif;
+        font-weight: 500;
+        font-style: normal;
         text-decoration: none;
-        color: #121212;
+        color: #7c7272;
     }
 
     /* Döljer overlay */
     .overlay {
         display: none;
+    }
+
+    .hero {
+        height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .card-section-bildbeskrivning {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .card-section-bildbeskrivning .card {
+        width: 95%;
+    }
+
+    .card-images {
+        flex-direction: row;
+    }
+
+    .card-images img {
+        width: 50%;
+        height: auto;
     }
 }
